@@ -289,6 +289,9 @@ section{position:relative;z-index:1}
 .tinfo .pr{font-family:var(--display);font-weight:700;font-size:1.35rem;white-space:nowrap;
   background:var(--g-main);-webkit-background-clip:text;background-clip:text;color:transparent}
 .addbtn{width:100%;margin-top:12px;padding:15px;font-size:.86rem}
+.tilt.folded{display:none}
+.morewrap{display:none;justify-content:center;margin-top:30px}
+.morewrap.on{display:flex}
 
 /* stats — colourful glass tiles */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0 0}
@@ -386,32 +389,74 @@ footer{padding:70px 0 34px;position:relative;z-index:1}
 }
 @media(max-width:860px){
   .wrap{padding:0 20px}
-  .hero{height:100svh}
+  /* hero must GROW to fit its content — a fixed height plus overflow:hidden
+     was clipping the buttons and the review row on small screens */
+  .hero{height:auto;min-height:auto;padding:100px 0 74px;display:block}
+  .hgrid{gap:22px}
   .wall{inset:-26%;gap:11px;transform:rotate(-7deg) scale(1.3)}
   .wcol{gap:11px}
   .wcol:nth-child(n+5){display:none}
+  .veil{background:linear-gradient(180deg,rgba(255,240,247,.78) 0%,rgba(255,240,247,.93) 46%,rgba(255,240,247,.99) 100%)}
+  .cue{display:none}
   .nlinks{display:none}
   .burger{display:block}
-  nav.stick .nrow{padding:8px 8px 8px 20px}
-  .ed{grid-template-columns:1fr;gap:70px;padding-top:90px}
-  .ed-txt{padding-left:0}
-  .ed-float{width:38%;right:-4%}
-  .pgrid{grid-template-columns:repeat(2,1fr);gap:16px}
-  .stats{grid-template-columns:repeat(2,1fr);gap:14px}
-  .stat{padding:28px 16px}
-  .fg{grid-template-columns:1fr 1fr;gap:28px}
-  .fbox{padding:44px 26px 28px;border-radius:32px}
-  .ringbox{height:430px}
-  .bento{gap:14px;grid-auto-rows:170px}
-  .bt{padding:22px;border-radius:26px}
-  .bt h3{font-size:1.2rem}
-  .bt p{font-size:.86rem}
-  .qbox{padding:52px 26px;border-radius:32px}
-  .qbox::before{left:20px;font-size:4rem}
-  .bandbox{padding:64px 24px;border-radius:34px}
-  .tinfo{flex-direction:column;align-items:flex-start;gap:6px}
+  nav{padding:14px 0}
+  nav.stick .nrow{padding:8px 8px 8px 18px}
+  .mark{font-size:1.25rem}
+  .nbag,.burger{padding:11px 17px;font-size:.78rem}
+  .showcase{max-width:280px;order:-1}
+  .pill{font-size:.74rem;padding:9px 17px;margin-bottom:18px}
+  .big{font-size:clamp(2.1rem,8.4vw,2.9rem);line-height:1.08}
+  .lede{font-size:.96rem;margin:18px auto 24px;max-width:38ch}
+  .acts{gap:10px}
+  .acts .cta{padding:15px 24px;font-size:.84rem;flex:1 1 auto}
+  .trust{margin-top:24px;gap:11px}
+  .avs img{width:36px;height:36px;margin-left:-11px;border-width:2px}
+  .trust small{font-size:.78rem}
+  .fpill{font-size:.73rem;padding:9px 15px}
+  .fp1{left:-4px;bottom:12%}
+  .fp2{right:-4px;top:38%}
+  .shead{margin-bottom:32px;gap:14px}
+  .ssub{font-size:.9rem}
+  .filters{gap:8px;margin-bottom:24px}
+  .fb{padding:10px 17px;font-size:.8rem}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .tilt-in{border-radius:22px}
+  .tinfo{padding:14px;flex-direction:column;align-items:flex-start;gap:3px}
+  .tinfo h4{font-size:.88rem;line-height:1.25}
+  .tinfo small{font-size:.72rem}
+  .tinfo .pr{font-size:1.15rem}
+  .addbtn{padding:13px;font-size:.8rem;margin-top:9px}
+  .badge{font-size:.62rem;padding:5px 11px;top:10px;left:10px}
+  .carousel{padding:66px 0 56px}
+  .ringbox{height:370px}
+  .hint{font-size:.76rem;margin-top:24px}
+  .bento{gap:12px;grid-auto-rows:160px}
+  .bt{padding:20px;border-radius:24px}
+  .bt h3{font-size:1.1rem}
+  .bt p{font-size:.83rem}
+  .bt .em{font-size:2.2rem}
+  .bt.grad .num{font-size:2.4rem}
+  .band{padding:46px 0 86px}
+  .bandbox{padding:56px 22px;border-radius:32px}
+  .bandbox p{font-size:.94rem;margin:20px auto 30px}
+  .fg{grid-template-columns:1fr 1fr;gap:26px}
+  .fbox{padding:38px 22px 26px;border-radius:30px}
+  .fbot{font-size:.78rem}
 }
-@media(max-width:560px){ .wall .wcol:nth-child(n+4){display:none} }
+@media(max-width:620px){
+  .wall .wcol:nth-child(n+4){display:none}
+  .rc{width:196px;height:278px;margin:-139px 0 0 -98px}
+  .rc .rcx{padding:12px}
+  .rc h4{font-size:.86rem}
+  .rc p{font-size:1.1rem}
+}
+@media(max-width:400px){
+  .pgrid{grid-template-columns:1fr}
+  .tinfo{flex-direction:row;align-items:center}
+  .showcase{max-width:240px}
+  .fg{grid-template-columns:1fr;gap:18px}
+}
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   [data-rv]{opacity:1!important;transform:none!important}
@@ -502,6 +547,7 @@ footer{padding:70px 0 34px;position:relative;z-index:1}
     </div>
     <div class="filters" id="filters" data-rv></div>
     <div class="pgrid" id="pgrid"></div>
+    <div class="morewrap" id="morewrap"><button class="cta line" onclick="showMore()">Show all products</button></div>
   </div>
 </section>
 
@@ -694,7 +740,7 @@ $("#mq").innerHTML=(["Small batch","Hand checked","Free returns","Plastic free",
 const ring=$("#ring"), box=$("#ringbox"), RP=P.slice(0,8);
 let RAD=430;
 function buildRing(){
-  RAD = innerWidth<620 ? 250 : innerWidth<980 ? 340 : 430;
+  RAD = innerWidth<620 ? 205 : innerWidth<980 ? 340 : 430;
   ring.innerHTML=RP.map((p,i)=>`
     <div class="rc" style="transform:rotateY(${i*45}deg) translateZ(${RAD}px)">
       <img src="${src(p)}" alt="${p.n}" loading="lazy">
@@ -726,8 +772,19 @@ $("#pgrid").innerHTML=P.map((p,i)=>`
   </div>
   <button class="cta line addbtn" onclick="add(${p.id})">Add to bag</button>
  </div>`).join("");
+/* on phones the grid opens folded so the page isn't 13 screens long */
+const FOLD=8;
+function showMore(){
+  $$(".tilt").forEach(t=>t.classList.remove("folded"));
+  $("#morewrap").classList.remove("on");
+}
+if(innerWidth<=860){
+  $$(".tilt").forEach((t,i)=>{ if(i>=FOLD) t.classList.add("folded") });
+  $("#morewrap").classList.add("on");
+}
 function filterCat(btn,c){
   $$(".fb").forEach(b=>b.classList.remove("on")); btn.classList.add("on");
+  showMore();   /* filtering always reveals the full set for that category */
   $$(".tilt").forEach(t=>t.classList.toggle("hide", c!=="All" && t.dataset.cat!==c));
 }
 if(FINE && !RM){
