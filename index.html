@@ -451,12 +451,18 @@ footer{padding:70px 0 34px;position:relative;z-index:1}
   .rc h4{font-size:.86rem}
   .rc p{font-size:1.1rem}
 }
+/* keep the product grid 2-up on phones — 1 column doubled the page length */
 @media(max-width:400px){
-  .pgrid{grid-template-columns:1fr}
-  .tinfo{flex-direction:row;align-items:center}
+  .wrap{padding:0 16px}
+  .pgrid{gap:11px}
+  .tinfo{padding:12px}
+  .tinfo h4{font-size:.82rem}
+  .tinfo .pr{font-size:1.05rem}
+  .addbtn{padding:12px;font-size:.76rem}
   .showcase{max-width:240px}
   .fg{grid-template-columns:1fr;gap:18px}
 }
+@media(max-width:330px){ .pgrid{grid-template-columns:1fr} }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   [data-rv]{opacity:1!important;transform:none!important}
