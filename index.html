@@ -123,7 +123,8 @@ nav.stick .nrow{background:var(--glass);backdrop-filter:blur(22px);border:1px so
   transform:translateY(-100%);transition:transform .6s var(--ease)}
 .menu.on{transform:none}
 .menu a{font-family:var(--display);font-size:2.2rem;font-weight:700}
-.menu button{position:absolute;top:22px;right:24px;background:none;border:none;font-size:2.2rem;cursor:pointer;color:var(--dim)}
+.menu button{position:absolute;top:18px;right:18px;background:none;border:none;font-size:2.2rem;cursor:pointer;color:var(--dim);
+  width:48px;height:48px;display:grid;place-items:center;border-radius:50%;line-height:1}
 
 /* ══ HERO ══ */
 .hero{height:90vh;min-height:600px;position:relative;overflow:hidden;display:grid;place-items:center;z-index:1}
@@ -348,7 +349,9 @@ footer{padding:70px 0 34px;position:relative;z-index:1}
 .bag.on{transform:none}
 .bh{display:flex;justify-content:space-between;align-items:center;padding:26px 28px}
 .bh strong{font-family:var(--display);font-size:1.3rem;font-weight:700}
-.bh button{background:none;border:none;color:var(--dim);font-size:1.8rem;cursor:pointer;line-height:1}
+.bh button{background:none;border:none;color:var(--dim);font-size:1.8rem;cursor:pointer;line-height:1;
+  width:44px;height:44px;display:grid;place-items:center;border-radius:50%;margin-right:-8px;transition:background .25s,color .25s}
+.bh button:hover{background:var(--s-pink);color:var(--pink)}
 .bitems{flex:1;overflow-y:auto;padding:0 28px}
 .bi{display:flex;gap:14px;align-items:center;padding:16px;margin-bottom:12px;background:#fff;border-radius:22px;
   box-shadow:0 8px 22px rgba(139,92,246,.09)}
